@@ -7,10 +7,12 @@ public class Coin : MonoBehaviour
 {
     public Text coinText;
 
-    public void PickupCoin(int point)
+    public void PickupCoin()
     {
-        
-        coinText.text = "Score " + point;
+        EventManager.OnCoinPickUp.Invoke();
         Destroy(gameObject);
     }
+
+    
+    
 }

@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     public float moveSpeed;
 
-    private int point = 0;
+    
 
     private void FixedUpdate()
     {
@@ -38,8 +38,8 @@ public class Player : MonoBehaviour
         Coin coin = other.GetComponent<Coin>();
         if(coin != null)
         {
-            point++;
-            coin.PickupCoin(point);  // int ve float vs. null olmaz hicbir zaman bunlarin default bir degeri vardir. 
+            
+            coin.PickupCoin();  // int ve float vs. null olmaz hicbir zaman bunlarin default bir degeri vardir. 
                                      // float ve integerlar icin default 0, bool'lar icin false, stringler icin empty.
             
         

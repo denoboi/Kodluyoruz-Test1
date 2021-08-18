@@ -32,7 +32,7 @@ public class ScoreText : MonoBehaviour
 
     void UpdateScoreText()
     {
-        point++;
+        point += GameManager.Instance.levelCoinMultiplier;
         ScoreText1.text = "Score: " + point;
         EventManager.OnScoreChange.Invoke(point);
     }

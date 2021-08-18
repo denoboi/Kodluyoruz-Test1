@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,5 +49,16 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over!");
+
+        int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if(!Application.CanStreamedLevelBeLoaded(buildIndex))
+        {
+            buildIndex = 0;
+        }
+
+        SceneManager.LoadScene(buildIndex);
+
+        
     }
 }

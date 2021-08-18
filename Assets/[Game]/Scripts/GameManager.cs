@@ -35,11 +35,11 @@ public class GameManager : MonoBehaviour
         EventManager.OnGameOver.RemoveListener(GameOver);
     }
 
-   
+
 
     void GameStateCheck(int point)
     {
-        
+
         if (point >= 5)
         {
             Debug.Log("Congrats");
@@ -52,13 +52,13 @@ public class GameManager : MonoBehaviour
 
         int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
-        if(!Application.CanStreamedLevelBeLoaded(buildIndex))
+        if (!Application.CanStreamedLevelBeLoaded(buildIndex))
         {
             buildIndex = 0;
         }
 
         SceneManager.LoadScene(buildIndex);
 
-        
+
     }
 }

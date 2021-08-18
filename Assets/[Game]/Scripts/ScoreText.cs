@@ -21,7 +21,6 @@ public class ScoreText : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnCoinPickUp.AddListener(UpdateScoreText);
-        
 
     }
 

@@ -7,6 +7,15 @@ public class Coin : MonoBehaviour
 {
     public Text coinText;
 
+    private void Start()
+    {
+        FindObjectOfType<CoinManager>().AddCoin(this);
+    }
+    private void OnDestroy()
+    {
+        FindObjectOfType<CoinManager>().RemoveCoin(this);
+    }
+
     public void PickupCoin()
     {
         EventManager.OnCoinPickUp.Invoke();

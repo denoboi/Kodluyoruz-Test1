@@ -7,11 +7,15 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnScoreChange.AddListener(GameStateCheck);
+        EventManager.OnGameOver.AddListener(GameOver);
     }
     private void OnDisable()
     {
         EventManager.OnScoreChange.RemoveListener(GameStateCheck);
+        EventManager.OnGameOver.RemoveListener(GameOver);
     }
+
+   
 
     void GameStateCheck(int point)
     {
@@ -20,5 +24,10 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Congrats");
         }
+    }
+
+    void GameOver()
+    {
+        Debug.Log("Game Over!");
     }
 }

@@ -9,11 +9,11 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<CoinManager>().AddCoin(this);
+        CoinManager.Instance.AddCoin(this);
     }
     private void OnDestroy()
     {
-        FindObjectOfType<CoinManager>().RemoveCoin(this);
+        CoinManager.Instance.RemoveCoin(this);
     }
 
     public void PickupCoin()
